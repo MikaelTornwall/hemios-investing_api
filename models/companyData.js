@@ -2,13 +2,11 @@ const mongoose = require('mongoose')
 
 const dataSchema = new mongoose.Schema({
   cashflowStatementHistoryQuarterly: {
-    AAPL: [
-      {
-        '2018-06-30': {
-        }
-      }
-    ]
-  }
+  },
+  balanceSheetHistoryQuarterly: {
+  },
+  incomeStatementHistoryQuarterly: {
+  }  
 },
 {
   collection: 'AAPL'
@@ -16,7 +14,9 @@ const dataSchema = new mongoose.Schema({
 
 dataSchema.statics.format = (data) => {
   return {
-    cashflowStatementHistoryQuarterly: data.cashflowStatementHistoryQuarterly
+    cashflowStatementHistoryQuarterly: data.cashflowStatementHistoryQuarterly,
+    balanceSheetHistoryQuarterly: data.balanceSheetHistoryQuarterly,
+    incomeStatementHistoryQuarterly: data.incomeStatementHistoryQuarterly
   }
 }
 

@@ -10,16 +10,4 @@ dataRouter.get('/', async (req, res) => {
   }
 })
 
-// dataRouter.get('/', async (req, res) => {
-//   try {
-//     Data.find({})
-//       .then(data => {
-//         res.json(data)
-//       })
-//   } catch (error) {
-//     console.log(error)
-//     res.status(500).json({ error: 'something went wrong' })
-//   }
-// })
-
 module.exports = dataRouter
