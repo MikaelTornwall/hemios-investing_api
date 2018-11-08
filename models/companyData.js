@@ -1,12 +1,14 @@
 const mongoose = require('mongoose')
 
 const dataSchema = new mongoose.Schema({
+  name: String,
+  id: String,
   cashflowStatementHistoryQuarterly: {
   },
   balanceSheetHistoryQuarterly: {
   },
   incomeStatementHistoryQuarterly: {
-  }  
+  }
 },
 {
   collection: 'AAPL'
@@ -14,6 +16,8 @@ const dataSchema = new mongoose.Schema({
 
 dataSchema.statics.format = (data) => {
   return {
+    name: data.name,
+    id: data._id,
     cashflowStatementHistoryQuarterly: data.cashflowStatementHistoryQuarterly,
     balanceSheetHistoryQuarterly: data.balanceSheetHistoryQuarterly,
     incomeStatementHistoryQuarterly: data.incomeStatementHistoryQuarterly
@@ -21,20 +25,5 @@ dataSchema.statics.format = (data) => {
 }
 
 const Data = mongoose.model('Data', dataSchema)
-
-
-// const dataSchema = new mongoose.Schema({
-//   cashflowStatementHistoryQuarterly: Object
-// })
-//
-// dataSchema.statics.format = (company) => {
-//   return {
-//     id: company._id,
-//     cashflowStatementHistoryQuarterly: company.cashflowStatementHistoryQuarterly
-//   }
-// }
-//
-// const Data = mongoose.model('Data', dataSchema)
-
 
 module.exports = Data

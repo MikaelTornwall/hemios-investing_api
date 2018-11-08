@@ -20,7 +20,7 @@ connectDatabase()
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/api/AAPL', dataRouter)
+app.use('/api/data', dataRouter)
 
 const server = http.createServer(app)
 
