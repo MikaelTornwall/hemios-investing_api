@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const dataRouter = require('./controllers/data')
+const industriesRouter = require('./controllers/industries')
 const config = require('./utils/config')
 
 const connectDatabase = async () => {
@@ -21,6 +22,7 @@ connectDatabase()
 app.use(bodyParser.json())
 app.use(cors())
 app.use('/api/data', dataRouter)
+app.use('/api/industries', industriesRouter)
 
 const server = http.createServer(app)
 
