@@ -1,7 +1,7 @@
-const dataRouter = require('express').Router()
+const dataQRouter = require('express').Router()
 const Data = require('../models/companyData')
 
-dataRouter.get('/', async (req, res) => {
+dataQRouter.get('/', async (req, res) => {
   try {
     const data = await Data.find({})
     res.json(data.map(Data.format))
@@ -10,10 +10,11 @@ dataRouter.get('/', async (req, res) => {
   }
 })
 
-dataRouter.get('/:id', async (req, res) => {
+dataQRouter.get('/:id', async (req, res) => {
   try {
+    console.log(req.params)
     const id = req.params.id
-    const data = await Data.findById(id)
+    const data = await Data.findOne({id: id})
 
     if (data) {
       res.json(Data.format(data))
@@ -25,14 +26,14 @@ dataRouter.get('/:id', async (req, res) => {
   }
 })
 
-dataRouter.get('/:id/cashflowStatement/', async (req, res) => {
+dataQRouter.get('/:id/cashflowStatement/', async (req, res) => {
   try {
     const id = req.params.id
-    const data = await Data.findById(id)
+    const data = await Data.findOne({id: id})
     console.log(data)
 
     if (data) {
-      const cashflowStatement = await data.cashflowStatementHistoryQuarterly
+      const cashflowStatement = await data.values.cashflowStatementHistoryQuarterly
       res.json(cashflowStatement)
     } else {
       res.status(404).end()
@@ -43,14 +44,14 @@ dataRouter.get('/:id/cashflowStatement/', async (req, res) => {
   }
 })
 
-dataRouter.get('/:id/balanceSheet/', async (req, res) => {
+dataQRouter.get('/:id/balanceSheet/', async (req, res) => {
   try {
     const id = req.params.id
-    const data = await Data.findById(id)
+    const data = await Data.findOne({id: id})
     console.log(data)
 
     if (data) {
-      const balanceSheet = await data.balanceSheetHistoryQuarterly
+      const balanceSheet = await data.values.balanceSheetHistoryQuarterly
       res.json(balanceSheet)
     } else {
       res.status(404).end()
@@ -61,14 +62,14 @@ dataRouter.get('/:id/balanceSheet/', async (req, res) => {
   }
 })
 
-dataRouter.get('/:id/incomeStatement/', async (req, res) => {
+dataQRouter.get('/:id/incomeStatement/', async (req, res) => {
   try {
     const id = req.params.id
-    const data = await Data.findById(id)
+    const data = await Data.findOne({id: id})
     console.log(data)
 
     if (data) {
-      const incomeStatement = await data.incomeStatementHistoryQuarterly
+      const incomeStatement = await data.values.incomeStatementHistoryQuarterly
       res.json(incomeStatement)
     } else {
       res.status(404).end()
@@ -79,4 +80,4 @@ dataRouter.get('/:id/incomeStatement/', async (req, res) => {
   }
 })
 
-module.exports = dataRouter
+module.exports = dataQRouter

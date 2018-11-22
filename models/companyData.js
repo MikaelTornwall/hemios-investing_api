@@ -2,52 +2,29 @@ const mongoose = require('mongoose')
 
 const dataSchema = new mongoose.Schema({
   name: String,
+  uuid: String,
   id: String,
-  cashflowStatementHistoryQuarterly: {
-  },
-  balanceSheetHistoryQuarterly: {
-  },
-  incomeStatementHistoryQuarterly: {
+  sector: String,
+  values: {
+    cashflowStatementHistoryQuarterly: [],
+    balanceSheetHistoryQuarterly: [],
+    incomeStatementHistoryQuarterly: []
   }
 },
 {
-  collection: 'AAPL'
+  collection: 'financial_data_quarterly'
 })
 
 dataSchema.statics.format = (data) => {
   return {
+    uuid: data._id,
     name: data.name,
-    id: data._id,
-    cashflowStatementHistoryQuarterly: data.cashflowStatementHistoryQuarterly,
-    balanceSheetHistoryQuarterly: data.balanceSheetHistoryQuarterly,
-    incomeStatementHistoryQuarterly: data.incomeStatementHistoryQuarterly
+    id: data.id,
+    sector: data.sector,
+    values: data.values
   }
 }
 
 const Data = mongoose.model('Data', dataSchema)
 
 module.exports = Data
-
-// const dataSchema = new mongoose.Schema({
-//   name: String,
-//   id: String,
-//   cashflowStatementHistoryQuarterly: {
-//   },
-//   balanceSheetHistoryQuarterly: {
-//   },
-//   incomeStatementHistoryQuarterly: {
-//   }
-// },
-// {
-//   collection: 'AAPL'
-// })
-//
-// dataSchema.statics.format = (data) => {
-//   return {
-//     name: data.name,
-//     id: data._id,
-//     cashflowStatementHistoryQuarterly: data.cashflowStatementHistoryQuarterly,
-//     balanceSheetHistoryQuarterly: data.balanceSheetHistoryQuarterly,
-//     incomeStatementHistoryQuarterly: data.incomeStatementHistoryQuarterly
-//   }
-// }
