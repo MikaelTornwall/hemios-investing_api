@@ -1,35 +1,45 @@
-# Hemios Investing API
+# Hemios Investing
+
+https://hemios.herokuapp.com/
 
 ## Description
-API for the value investing analysis tool Hemios. The data is originally from Yahoo Finance.
 
-## Endpoints:
-__For the annual financial data (last four year):__
+Financial data analysis tool for value investors.
 
-https://polar-springs-21656.herokuapp.com/api/financial_data
+Currently we provide analysis for balance sheet values for most SP500 companies.
 
-https://polar-springs-21656.herokuapp.com/api/financial_data/:id
+The app also provides an API for financial data. The data is originally from Yahoo Finance.
 
-https://polar-springs-21656.herokuapp.com/api/financial_data/:id/incomeStatement
+## API
 
-https://polar-springs-21656.herokuapp.com/api/financial_data/:id/cashflowStatement
+### Endpoints:
 
-https://polar-springs-21656.herokuapp.com/api/financial_data/:id/balanceSheet
+__For the annual financial data (last four years):__
+
+https://hemios.herokuapp.com/api/financial_data
+
+https://hemios.herokuapp.com/api/financial_data/:id
+
+https://hemios.herokuapp.com/api/financial_data/:id/incomeStatement
+
+https://hemios.herokuapp.com/api/financial_data/:id/cashflowStatement
+
+https://hemios.herokuapp.com/api/financial_data/:id/balanceSheet
 
 __For the quarterly financial data (last four quarters):__
 
-https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly
+https://hemios.herokuapp.com/api/financial_data_quarterly
 
-https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly/:id
+https://hemios.herokuapp.com/api/financial_data_quarterly/:id
 
-https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly/:id/incomeStatement
+https://hemios.herokuapp.com/api/financial_data_quarterly/:id/incomeStatement
 
-https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly/:id/cashflowStatement
+https://hemios.herokuapp.com/api/financial_data_quarterly/:id/cashflowStatement
 
-https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly/:id/balanceSheet
+https://hemios.herokuapp.com/api/financial_data_quarterly/:id/balanceSheet
 
 __For the industries:__
 
-https://polar-springs-21656.herokuapp.com/api/industries
+https://hemios.herokuapp.com/api/industries
 
 _Where the :id is the company id, such as AAPL or GOOGL, make sure to use uppercase letters when making requests._
