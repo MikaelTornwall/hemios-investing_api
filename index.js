@@ -23,6 +23,7 @@ connectDatabase()
 
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static('build'))
 app.use('/api/financial_data_quarterly', dataQRouter)
 app.use('/api/financial_data', dataRouter)
 app.use('/api/industries', industriesRouter)
