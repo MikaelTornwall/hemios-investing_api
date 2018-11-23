@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const dataQRouter = require('./controllers/financial_data_quarterly')
 const dataRouter = require('./controllers/financial_data')
 const industriesRouter = require('./controllers/industries')
+const kpisRouter = require('./controllers/kpis')
 const config = require('./utils/config')
 
 const connectDatabase = async () => {
@@ -25,6 +26,7 @@ app.use(cors())
 app.use('/api/financial_data_quarterly', dataQRouter)
 app.use('/api/financial_data', dataRouter)
 app.use('/api/industries', industriesRouter)
+app.use('/api/kpis', kpisRouter)
 
 const server = http.createServer(app)
 
