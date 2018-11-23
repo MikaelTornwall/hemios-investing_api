@@ -17,7 +17,7 @@ The front-end source code can be found here: https://github.com/osguosgu/hemios-
 
 * [@maimei](https://github.com/maimei) (Helena Meissner)
 
-* [MikaelTornwall](https://github.com/MikaelTornwall) (Mikael Törnwall)
+* [@MikaelTornwall](https://github.com/MikaelTornwall) (Mikael Törnwall)
 
 ## API
 
