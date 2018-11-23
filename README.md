@@ -10,6 +10,13 @@ Currently we provide analysis for balance sheet values for most SP500 companies.
 
 The app also provides an API for financial data. The data is originally from Yahoo Finance.
 
+The front-end source code can be found here: https://github.com/osguosgu/hemios-investing
+
+## Contributors
+..* [@osguosgu](https://github.com/osguosgu) (Oskari Päivinen)
+..* [@maimei](https://github.com/maimei) (Helena Meissner)
+..* [MikaelTornwall](https://github.com/MikaelTornwall) (Mikael Törnwall)
+
 ## API
 
 ### Endpoints:
