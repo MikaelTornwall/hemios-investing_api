@@ -13,9 +13,11 @@ The app also provides an API for financial data. The data is originally from Yah
 The front-end source code can be found here: https://github.com/osguosgu/hemios-investing
 
 ## Contributors
-..* [@osguosgu](https://github.com/osguosgu) (Oskari Päivinen)
-..* [@maimei](https://github.com/maimei) (Helena Meissner)
-..* [MikaelTornwall](https://github.com/MikaelTornwall) (Mikael Törnwall)
+* [@osguosgu](https://github.com/osguosgu) (Oskari Päivinen)
+
+* [@maimei](https://github.com/maimei) (Helena Meissner)
+
+* [MikaelTornwall](https://github.com/MikaelTornwall) (Mikael Törnwall)
 
 ## API
 
